@@ -19,7 +19,7 @@ target_link_libraries(${PROJECT_NAME} Boost::system)
 
 add_custom_target(
     format
-    COMMAND clang-format -i ${PROJECT_SOURCE_DIR}/src/*.cpp ${PROJECT_SOURCE_DIR}/include/*.hpp
+    COMMAND clang-format -i --style=file ${PROJECT_SOURCE_DIR}/src/*.cpp ${PROJECT_SOURCE_DIR}/include/*.hpp
 )
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
