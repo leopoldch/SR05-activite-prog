@@ -39,6 +39,15 @@ make
 
 After successful compilation, the project is ready to use.
 
+### Misc
+
+To format the project (once you have compiled), execute the following commands:
+>Make sure to have clang-format installed before running
+
+```sh
+make format
+```
+
 ## Usage Example
 
 Run multiple instances of the program in a pipeline:
