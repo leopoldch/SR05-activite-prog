@@ -1,31 +1,10 @@
-# SR05 - Activity 2
+# SR05 - Activity programmation
 
 This project is part of my computer engineering studies at the Université de Technologie de Compiègne.
 
 ## Objective
 
-The goal of this activity is to develop a minimalist distributed program using a Linux shell pipeline. The first program instance writes a message to `stdout`, which is then redirected through a Linux pipe to the next instance.
-
-## Build Instructions
-
-### Dependencies
-
-This project relies on ASIO for asynchronous I/O operations (specifically, file descriptors in this case). Ensure that ASIO is installed on your system before compiling.
-
-#### Installation per OS:
-
-- **Debian-based distributions (Ubuntu, Debian, etc.)**
-  ```sh
-  sudo apt install libboost-dev libboost-system-dev
-  ```
-- **Fedora**
-  ```sh
-  sudo dnf install boost-devel
-  ```
-- **Windows (via vcpkg)**
-  ```sh
-  vcpkg install boost-asio
-  ```
+The goal of this activity is to develop a minimalist distributed program using a Linux shell pipeline. The program writes a message to `stdout` while receiving messages to `sdin`.
 
 ### Compilation
 

@@ -2,26 +2,19 @@
 
 void emitMessage(const std::string& message, const bool debug)
 {
-    const pid_t pid = getpid();
-    std::cerr << "Emitter PID: " << pid << std::endl;
+    const std::string new_message = message + "\n";
 
-    std::string newMessage = message;
-    while (true)
+    if (write(STDOUT_FILENO, new_message.c_str(), new_message.size()) == -1)
     {
-	if (write(STDOUT_FILENO, newMessage.c_str(), newMessage.size()) == -1)
-	{
-	    std::cerr << "An error occurred" << std::endl;
-	    write(STDOUT_FILENO, ERROR, sizeof(ERROR));
-	    return;
-	}
-	sleep(1);
-	if (debug)
-	{
-	    for (int i = 0; i < 15; i++)
-	    {
-		std::cerr << "." << std::endl;
-		sleep(5);
-	    }
-	}
+        std::cerr << "An error occurred" << std::endl;
+        write(STDOUT_FILENO, ERROR, sizeof(ERROR));
+        return;
+    }
+    if (debug)
+    {
+	for (int i = 0; i < 1000; ++i)
+        {
+            std::cerr << "." << std::endl;
+        }
     }
 }

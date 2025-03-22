@@ -1,12 +1,13 @@
 #ifndef COMMON_HPP
-#include <asio.hpp>
 #include <cstring>
-#include <fcntl.h>
 #include <iostream>
+#include <iterator>
+#include <sstream>
 #include <string>
-#include <thread>
+#include <sys/select.h>
+#include <sys/time.h>
+#include <sys/types.h>
 #include <unistd.h>
-#include <vector>
 
 #define ERROR "error-code"
 #define DEFAULT_MESSAGE "default-message"

@@ -27,25 +27,22 @@ int main(int argc, char** argv)
 	}
     }
 
-    const bool emit = isEmitter();
+    if (message == "")
+    {
+		message = DEFAULT_MESSAGE;
+    }
 
     if (debug)
     {
-	std::cerr << "Debug mode enabled" << std::endl;
+		std::cerr << "Debug mode enabled" << std::endl;
+		sleep(1);
     }
 
-    if (emit)
+    while (true)
     {
-	if (message.empty())
-	{
-	    std::cerr << "No message provided" << std::endl;
-	    return 1;
-	}
-	emitMessage(message, debug);
-    }
-    else
-    {
-	listenForMessage(debug);
+		emitMessage(message, debug);
+		sleep(1);
+		listenForMessage();
     }
 
     return 0;
