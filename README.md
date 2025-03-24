@@ -18,6 +18,8 @@ The main program runs in an infinite `while` loop that performs two tasks:
 2. **Receive Messages**  
     It checks for incoming messages using the `listener` function. If data is available, the program reads it from `stdin`.
 
+This guarantees that the emit and receive operations happen one after the other on the same thread, so they never run at the same time. The write operation is carried out before the listener and cannot be interrupted once it starts. In other words, these actions are atomic and cannot be paused in the middle to begin a read or write elsewhere.
+
 ### Write Function
 
 The `write` function outputs the message directly to `stdout`. Alternatively, functions like `printf` or `sprintf` could also be used.
@@ -25,6 +27,8 @@ The `write` function outputs the message directly to `stdout`. Alternatively, fu
 ### Read Function
 
 The `read` function first checks `stdin` using the `select` function to verify if there is data to read. If data is available, it reads the bytes from the file descriptor into a buffer and prints it to `stderr` to avoid passing it to the next program in the pipeline.
+
+This approach effectively provides asynchronous, non-blocking behavior.
 
 ---
 
