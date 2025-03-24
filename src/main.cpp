@@ -29,20 +29,20 @@ int main(int argc, char** argv)
 
     if (message == "")
     {
-		message = DEFAULT_MESSAGE;
+	message = DEFAULT_MESSAGE;
     }
 
     if (debug)
     {
-		std::cerr << "Debug mode enabled" << std::endl;
-		sleep(1);
+	std::cerr << "Debug mode enabled" << std::endl;
+	sleep(1);
     }
 
     while (true)
     {
-		emitMessage(message, debug);
-		sleep(1);
-		listenForMessage();
+	emitMessage(message, debug);
+	sleep(1);
+	listenForMessage();
     }
 
     return 0;

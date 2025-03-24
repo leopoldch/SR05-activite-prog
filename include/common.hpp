@@ -1,4 +1,5 @@
 #ifndef COMMON_HPP
+#include <cerrno>
 #include <cstring>
 #include <iostream>
 #include <iterator>
