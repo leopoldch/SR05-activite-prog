@@ -7,7 +7,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 file(GLOB SOURCES "src/*.cpp")
 
-find_package(Boost REQUIRED COMPONENTS system)
+# unsued anymore
+# find_package(Boost REQUIRED COMPONENTS system)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
@@ -15,7 +16,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE include)
 
 target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
 
-target_link_libraries(${PROJECT_NAME} Boost::system)
+# unsued anymore
+#target_link_libraries(${PROJECT_NAME} Boost::system)
 
 add_custom_target(
     format
